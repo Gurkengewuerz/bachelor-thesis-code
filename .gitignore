@@ -1,5 +1,6 @@
 cygbot/build/bin
 node_modules
+.idea
 __pycache__
 *.py[cod]
 cygbot/frontend/dist
