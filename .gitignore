@@ -1,0 +1,7 @@
+cygbot/build/bin
+node_modules
+__pycache__
+*.py[cod]
+cygbot/frontend/dist
+cygbot/sensor*
+cygbot-servo/stubs
