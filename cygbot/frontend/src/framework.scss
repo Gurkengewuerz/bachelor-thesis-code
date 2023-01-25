@@ -1,0 +1,10 @@
+$color-mode-type: media-query;
+
+@import "~bootstrap/scss/bootstrap";
+
+@include color-mode(dark) {
+    .element {
+        color: var(--bs-primary-text);
+        background-color: var(--bs-primary-bg-subtle);
+    }
+}
