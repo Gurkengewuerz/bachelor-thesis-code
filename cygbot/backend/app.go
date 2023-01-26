@@ -237,21 +237,21 @@ func (a *App) toPCD(onlyDegree int) error {
 				y := val[1]
 				z := val[2]
 
+				if dat != nil {
+					_, _ = dat.WriteString(fmt.Sprintf("%.0f ", val[3]))
+				}
+
 				if x == 0 && y == 0 && z == 0 {
 					continue
 				}
 
-				angleRad := float64(degree) * math.Pi / 180.0
+				//angleRad := float64(degree) * math.Pi / 180.0
 
-				roatedX := x*float32(math.Cos(angleRad)) + z*float32(math.Sin(angleRad))
+				//roatedX := x*float32(math.Cos(angleRad)) + z*float32(math.Sin(angleRad))
 				//roatedY := y*float32(math.Sin(float64(degree))) + y*float32(math.Cos(float64(degree)))
-				roatedZ := z*float32(math.Cos(angleRad)) + x*float32(math.Sin(angleRad))
+				//roatedZ := z*float32(math.Cos(angleRad)) + x*float32(math.Sin(angleRad))
 
-				_, _ = pcd.WriteString(fmt.Sprintf("%.5f %.5f %.5f\n", roatedX, y, roatedZ))
-
-				if dat != nil {
-					_, _ = dat.WriteString(fmt.Sprintf("%.0f ", val[3]))
-				}
+				_, _ = pcd.WriteString(fmt.Sprintf("%.5f %.5f %.5f\n", x, y, z))
 			}
 			if dat != nil {
 				_, _ = dat.WriteString("\n")
