@@ -22,7 +22,7 @@ with open("sensor.dat") as f:
                 for pixel_y in range(SIZE_PER_PIXEL):
                     hue = colorsys.hsv_to_rgb(val/MAX_DISTANCE, 1, 1)
                     data_rgb[pixel_y + (current_y  * SIZE_PER_PIXEL), pixel_x + (current_x * SIZE_PER_PIXEL)] = [hue[0] * 255, hue[1] * 255, hue[2] * 255]
-                    data_gray[pixel_y + (current_y  * SIZE_PER_PIXEL), pixel_x + (current_x * SIZE_PER_PIXEL)] = int(min(val / MAX_DISTANCE, 1) * 255.9999)
+                    data_gray[pixel_y + (current_y  * SIZE_PER_PIXEL), pixel_x + (current_x * SIZE_PER_PIXEL)] = int((1 - min(val / MAX_DISTANCE, 1)) * 255.9999)
             current_x += 1
         current_y += 1
 
